@@ -2,6 +2,10 @@
 /*         */
 /* Default */
 /* _______ */
+/* ______ */
+/*        */
+/* Colors */
+/* ______ */
 a,
 abbr,
 address,
@@ -350,18 +354,32 @@ html {
   font-size: 62.5%; }
 
 body {
+  height: 100%;
   margin: 0;
   font-size: 1.48rem;
   line-height: 1.48rem; }
 
-body > main {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-flow: column nowrap;
-  flex-flow: column nowrap; }
+main {
+  display: grid;
+  height: 100%; }
+  main header,
+  main section,
+  main footer {
+    padding: 1rem; }
+  main header {
+    grid-area: header; }
+  main section {
+    grid-area: content; }
+  main footer {
+    grid-area: footer; }
+  main._header._content._footer {
+    grid-template-areas: 'header header header header header' 'content content content content content' 'footer footer footer footer footer';
+    grid-template-rows: 7rem 1fr 7rem;
+    grid-template-columns: 1fr; }
+  main._header._sidebar._content._footer {
+    grid-template-areas: 'header header header header header' 'content content content content content' 'footer footer footer footer footer';
+    grid-template-rows: 6rem 1fr 6rem;
+    grid-template-columns: 1fr; }
 
 h1 {
   display: block;
@@ -397,7 +415,86 @@ h6 {
 /*         */
 /* Classes */
 /* _______ */
+/* For loop generated classes */
+.pad-sm {
+  padding: 1rem; }
+
+.pad-md {
+  padding: 4rem; }
+
+.pad-lg {
+  padding: 8rem; }
+
+.w-10 {
+  width: 10%; }
+
+.w-20 {
+  width: 20%; }
+
+.w-30 {
+  width: 30%; }
+
+.w-40 {
+  width: 40%; }
+
+.w-50 {
+  width: 50%; }
+
+.w-60 {
+  width: 60%; }
+
+.w-70 {
+  width: 70%; }
+
+.w-80 {
+  width: 80%; }
+
+.w-90 {
+  width: 90%; }
+
+.w-100 {
+  width: 100%; }
+
+/* ___ */
+/* </> */
+/* >>> */
 .clearfix {
-  display: flow-root; }
+  clear: both; }
   .clearfix::after {
-    display: flow-root; }
+    content: ' ';
+    display: flow-root;
+    clear: both; }
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .container-row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap; }
+  .container-column {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap; }
+
+.m-auto {
+  margin-left: auto;
+  margin-right: auto; }
+
+/*___________________*/
+/*                   */
+/*     Temporary     */
+/*      Styling      */
+/*___________________*/
+header {
+  background-color: #9b59b6; }
+
+body,
+section {
+  background-color: #fbfcfc; }
+
+footer {
+  background-color: #f4f6f7; }

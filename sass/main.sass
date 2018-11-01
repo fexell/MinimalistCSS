@@ -4,11 +4,11 @@
 /* Default */
 /* _______ */
 
-@import './default/variables'
-@import './default/reset'
-@import './default/normalize'
-@import './default/stylize'
-@import './default/headings'
+@import './essential/variables'
+@import './essential/reset'
+@import './essential/normalize'
+@import './essential/stylize'
+@import './essential/headings'
 
 /* _______ */
 /*         */
@@ -16,3 +16,22 @@
 /* _______ */
 
 @import './classes/classes'
+
+/*___________________*/
+/*                   */
+/*     Temporary     */
+/*      Styling      */
+/*___________________*/
+
+header
+    background:
+        color: map-get( $amet, 5 )
+
+body,
+section
+    background:
+        color: map-get( $clouds, 1 )
+
+footer
+    background:
+        color: map-get( $clouds, 3 )

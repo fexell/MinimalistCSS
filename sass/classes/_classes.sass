@@ -1,6 +1,41 @@
 
-.clearfix
-    display: flow-root
+/* For loop generated classes */
+
+// Padding classes
+@each $n, $p in $padding
+    .pad-#{ $n }
+        padding: $p
+
+// Width classes
+@for $i from 1 through 10
+    .w-#{ $i }0
+        width: $i * 10 + %
+
+/* ___ */
+/* </> */
+/* >>> */
+
+.clearfix // Clearfix
+    clear: both
 
     &::after
+        content: ' '
         display: flow-root
+        clear: both
+
+.container // Container - use it only if needed
+    display: flex
+
+    &-row
+        flex:
+            flow: row nowrap
+
+    &-column
+        flex:
+            flow: column nowrap
+
+.m
+    &-auto
+        margin:
+            left: auto
+            right: auto
