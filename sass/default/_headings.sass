@@ -1,0 +1,9 @@
+
+$h1-size: 8rem
+
+@for $i from 1 through 6
+    h#{ $i }
+        display: block
+        font:
+            size: $h1-size / $i * $size
+        line-height: 8 * $size / $i + rem
