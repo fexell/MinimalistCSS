@@ -1,0 +1,11 @@
+.clearfix {
+  clear: both; }
+  .clearfix::after {
+    content: ' ';
+    display: flow-root;
+    clear: both; }
+
+.align {
+  display: block; }
+  .align-center {
+    text-align: center; }

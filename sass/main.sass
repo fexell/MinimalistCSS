@@ -15,7 +15,8 @@
 /* Classes */
 /* _______ */
 
-@import './classes/classes'
+@import './classes/layout'
+@import './classes/helpers'
 
 /*___________________*/
 /*                   */
@@ -24,13 +25,17 @@
 /*___________________*/
 
 header
-    background:
-        color: map-get( $amet, 5 )
+    background: linear-gradient( -45deg, map-get( $amet, 5 ), map-get( $amet, 8 ) )
+        //color: map-get( $amet, 5 )
 
 body,
 section
     background:
         color: map-get( $clouds, 1 )
+
+aside
+    background:
+        color: map-get( $asph, 9 )
 
 footer
     background:
