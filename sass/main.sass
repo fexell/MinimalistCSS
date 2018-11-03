@@ -9,6 +9,7 @@
 @import './essential/normalize'
 @import './essential/stylize'
 @import './essential/headings'
+@import './essential/navigation'
 
 /* _______ */
 /*         */
@@ -34,9 +35,16 @@ section
         color: map-get( $clouds, 1 )
 
 aside
+    border:
+        right: 5px solid map-get( $colors, red )
     background:
         color: map-get( $asph, 9 )
 
+    & a
+        &:hover
+            background:
+                color: map-get( $colors, red )
+
 footer
     background:
-        color: map-get( $clouds, 3 )
+        color: map-get( $colors, red )

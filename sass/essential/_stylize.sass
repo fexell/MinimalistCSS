@@ -22,16 +22,25 @@ main
 
     &.hcf,
     &._header._content._footer
-        grid-template-areas: 'header header header header header' 'content content content content content' 'footer footer footer footer footer'
-        grid-template-rows: 7rem 1fr 7rem
-        grid-template-columns: 1fr
+        grid-template:
+            areas: 'header header header header header' 'content content content content content' 'footer footer footer footer footer'
+            rows: 7rem 1fr 7rem
+            columns: 1fr
 
     &.hscf,
     &._header._sidebar._content._footer
-        grid-template-areas: 'header header header header header' 'sidebar content content content content' 'footer footer footer footer footer'
-        grid-template-rows: 6rem 1fr 6rem
-        grid-template-columns: minmax( auto, 240px ) 1fr
+        grid-template:
+            areas: 'header header header header header' 'sidebar content content content content' 'footer footer footer footer footer'
+            rows: 6rem 1fr 6rem
+            columns: minmax( auto, 240px ) 1fr
 
         &> header
             padding:
                 left: 240px
+    
+    &.scf,
+    &._sidebar._content._footer
+        grid-template:
+            areas: 'sidebar content content content content' 'sidebar footer footer footer footer'
+            rows: 1fr 6rem
+            columns: minmax( auto, 80px ) 1fr

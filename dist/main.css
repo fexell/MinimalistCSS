@@ -2,10 +2,32 @@
 /*         */
 /* Default */
 /* _______ */
+/* Main values and sizes */
 /* ______ */
 /*        */
 /* Colors */
 /* ______ */
+.color-white {
+  color: #fdfefe; }
+
+.color-black {
+  color: #222222; }
+
+.color-red {
+  color: #e74c3c; }
+
+.color-purple {
+  color: #8e44ad; }
+
+.color-blue {
+  color: #3498db; }
+
+.color-green {
+  color: #27ae60; }
+
+.color-yellow {
+  color: #f1c40f; }
+
 a,
 abbr,
 address,
@@ -359,6 +381,65 @@ body {
   font-size: 1.48rem;
   line-height: 1.48rem; }
 
+/* Text elements */
+a,
+abbr,
+b,
+bdi,
+bdo,
+blockquote,
+br,
+cite,
+code,
+data,
+dd,
+dfn,
+dir,
+div,
+dl,
+dt,
+em,
+figcaption,
+figure,
+hr,
+i,
+kbd,
+li,
+main,
+mark,
+ol,
+p,
+pre,
+q,
+rb,
+rp,
+rt,
+rtc,
+ruby,
+s,
+samp,
+small,
+span,
+strong,
+sub,
+sup,
+time,
+tt,
+u,
+ul,
+var,
+wbr {
+  color: inherit; }
+
+a, a:hover,
+button,
+button:hover,
+[type="button"],
+[type="button"]:hover {
+  -webkit-transition: 250ms ease-out;
+  -o-transition: 250ms ease-out;
+  transition: 250ms ease-out; }
+
 main {
   display: grid;
   height: 100%; }
@@ -384,6 +465,10 @@ main {
     grid-template-columns: minmax(auto, 240px) 1fr; }
     main.hscf > header, main._header._sidebar._content._footer > header {
       padding-left: 240px; }
+  main.scf, main._sidebar._content._footer {
+    grid-template-areas: 'sidebar content content content content' 'sidebar footer footer footer footer';
+    grid-template-rows: 1fr 6rem;
+    grid-template-columns: minmax(auto, 80px) 1fr; }
 
 h1 {
   display: block;
@@ -415,6 +500,22 @@ h6 {
   font-size: 1.97333rem;
   line-height: 1.97333rem; }
 
+nav ul {
+  list-style-type: none; }
+  nav ul li {
+    display: block; }
+    nav ul li a {
+      display: block;
+      padding: 2.5rem 1rem;
+      text-align: center;
+      font-size: 2.22rem; }
+      nav ul li a span.bar {
+        display: block;
+        max-width: 40%;
+        padding: 0.15rem;
+        margin: 0 auto 0.4rem auto;
+        background-color: #fdfefe; }
+
 /* _______ */
 /*         */
 /* Classes */
@@ -424,6 +525,7 @@ h6 {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  height: 100%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -438,10 +540,10 @@ h6 {
   padding: 1rem; }
 
 .pad-md {
-  padding: 4rem; }
+  padding: 2.5rem; }
 
 .pad-lg {
-  padding: 8rem; }
+  padding: 5rem; }
 
 .w-10 {
   width: 10%; }
@@ -577,7 +679,10 @@ section {
   background-color: #fbfcfc; }
 
 aside {
+  border-right: 5px solid #e74c3c;
   background-color: #1b2631; }
+  aside a:hover {
+    background-color: #e74c3c; }
 
 footer {
-  background-color: #f4f6f7; }
+  background-color: #e74c3c; }
