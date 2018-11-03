@@ -1,0 +1,50 @@
+
+main,
+.main
+    min-height: 100%
+    height: auto
+
+    display: grid
+
+    header,
+    .header,
+
+    aside,
+    .sidebar,
+
+    section,
+    .content,
+
+    footer,
+    .footer
+        padding: map-get( $padding, sm )
+
+    header,
+    .header
+        grid:
+            area: header
+
+    aside,
+    .sidebar
+        grid:
+            area: aside
+
+    section,
+    .content
+        grid:
+            area: content
+
+    footer,
+    .footer
+        grid:
+            area: footer
+
+@for $i from 1 through 24
+    .grid-column-#{ $i }
+        grid-column: $i + / + 24
+
+    .grid-row-#{ $i }
+        grid-row: $i + / + 24
+
+    .grid-order-#{ $i }
+        order: $i

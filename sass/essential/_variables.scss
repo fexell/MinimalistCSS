@@ -276,14 +276,21 @@ $colors: (
     purple: map-get( $wist, 5 ),
     blue: map-get( $pete, 5 ),
     green: map-get( $neph, 5 ),
-    yellow: map-get( $sun, 5 )
+    yellow: map-get( $sun, 5 ),
+    midnight: map-get( $mid, 9 )
 );
 
 @each $key, $color in $colors {
 
+    .bg-#{ $key } {
+
+        background-color: $color;
+
+    }
+
     .color-#{ $key } {
 
-        color: $color
+        color: $color;
 
     }
 

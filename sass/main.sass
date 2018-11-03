@@ -7,9 +7,7 @@
 @import './essential/variables'
 @import './essential/reset'
 @import './essential/normalize'
-@import './essential/stylize'
 @import './essential/headings'
-@import './essential/navigation'
 
 /* _______ */
 /*         */
@@ -19,32 +17,22 @@
 @import './classes/layout'
 @import './classes/helpers'
 
+/* _____*/
+/*      */
+/* Grid */
+/* _____*/
+
+@import './grid/grid'
+@import './grid/layouts'
+
 /*___________________*/
 /*                   */
 /*     Temporary     */
 /*      Styling      */
 /*___________________*/
 
-header
-    background: linear-gradient( -45deg, map-get( $amet, 5 ), map-get( $amet, 8 ) )
-        //color: map-get( $amet, 5 )
-
-body,
-section
-    background:
-        color: map-get( $clouds, 1 )
-
 aside
-    border:
-        right: 5px solid map-get( $colors, red )
-    background:
-        color: map-get( $asph, 9 )
-
     & a
         &:hover
             background:
                 color: map-get( $colors, red )
-
-footer
-    background:
-        color: map-get( $colors, red )

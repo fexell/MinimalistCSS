@@ -1,0 +1,15 @@
+
+.grid-layout
+    &-1
+        grid:
+            template:
+                rows: minmax( auto, 6rem ) 1fr minmax( auto, 6rem )
+                columns: 1fr
+                areas: 'header header' 'content content' 'footer footer'
+
+    &-2
+        grid:
+            template:
+                rows: minmax( auto, 6rem ) 1fr minmax( auto, 6rem )
+                columns: minmax( auto, 24rem ) 1fr
+                areas: 'header header' 'aside content' 'footer footer'
