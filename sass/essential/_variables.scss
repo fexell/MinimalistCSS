@@ -295,3 +295,26 @@ $colors: (
     }
 
 }
+
+@supports ( --var: green ) {
+
+    :root {
+
+        --size: #{ $size };
+        --timing: #{ $timing };
+    
+        @each $key, $color in $colors {
+    
+            --#{ $key }: #{ $color };
+    
+        }
+        
+        @each $key, $value in $padding {
+    
+            --padding-#{ $key }: #{ $value }
+    
+        }
+    
+    }
+
+}
