@@ -12,9 +12,6 @@ main,
     aside,
     .sidebar,
 
-    section,
-    .content,
-
     footer,
     .footer
         padding: map-get( $padding, sm )
@@ -31,6 +28,7 @@ main,
 
     section,
     .content
+        padding: map-get( $padding, lg )
         grid:
             area: content
 
@@ -39,12 +37,15 @@ main,
         grid:
             area: footer
 
-@for $i from 1 through 24
+.grid
+    display: grid
+
+@for $i from 1 through 12
     .grid-column-#{ $i }
-        grid-column: $i + / + 24
+        grid-column: $i + / + 12
 
     .grid-row-#{ $i }
-        grid-row: $i + / + 24
+        grid-row: $i + / + 12
 
     .grid-order-#{ $i }
         order: $i

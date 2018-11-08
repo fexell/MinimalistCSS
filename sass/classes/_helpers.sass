@@ -3,7 +3,7 @@
 
     &::after
         content: ' '
-        display: flow-root
+        display: flow-root // The new "clearfix"
         clear: both
 
 .align
@@ -12,3 +12,18 @@
     &-center
         text:
             align: center
+
+    &-left
+        text:
+            align: left
+
+    &-right
+        text:
+            align: right
+
+.float
+    &-left
+        float: left
+
+    &-right
+        float: right

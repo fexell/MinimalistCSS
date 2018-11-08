@@ -1,0 +1,76 @@
+/* Main values and sizes */
+/* ______ */
+/*        */
+/* Colors */
+/* ______ */
+.bg-white {
+  background-color: #fdfefe; }
+
+.color-white {
+  color: #fdfefe; }
+
+.bg-black {
+  background-color: #222222; }
+
+.color-black {
+  color: #222222; }
+
+.bg-red {
+  background-color: #e74c3c; }
+
+.color-red {
+  color: #e74c3c; }
+
+.bg-purple {
+  background-color: #8e44ad; }
+
+.color-purple {
+  color: #8e44ad; }
+
+.bg-blue {
+  background-color: #3498db; }
+
+.color-blue {
+  color: #3498db; }
+
+.bg-green {
+  background-color: #27ae60; }
+
+.color-green {
+  color: #27ae60; }
+
+.bg-yellow {
+  background-color: #f1c40f; }
+
+.color-yellow {
+  color: #f1c40f; }
+
+.bg-midnight {
+  background-color: #17202a; }
+
+.color-midnight {
+  color: #17202a; }
+
+@supports (--var: green) {
+  :root {
+    --size: 1.48;
+    --timing: 250ms;
+    --white: #fdfefe;
+    --black: #222222;
+    --red: #e74c3c;
+    --purple: #8e44ad;
+    --blue: #3498db;
+    --green: #27ae60;
+    --yellow: #f1c40f;
+    --midnight: #17202a;
+    --padding-sm: 1rem
+    
+        ;
+    --padding-md: 2.5rem
+    
+        ;
+    --padding-lg: 5rem
+    
+        ; } }
+
+/*# sourceMappingURL=_variables.css.map */
