@@ -298,6 +298,7 @@ $white: (
 $colors: (
     white: map-get( $clouds, 0 ),
     black: map-get( $black, 7 ),
+    gray: map-get( $clouds, 7 ),
     red: map-get( $aliz, 5 ),
     purple: map-get( $wist, 5 ),
     blue: map-get( $pete, 5 ),

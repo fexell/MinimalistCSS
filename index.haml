@@ -1,0 +1,36 @@
+!!!
+%html
+    %head
+        %title MinimalCSS
+        
+    %body
+
+        %main.grid-layout-2.use-mq
+
+            %header.bg-red
+                .container.w-90.m-auto
+                    %nav.row
+                        %ul.color-white
+                            %li
+                                %a{ "href" => "#" } Home
+                            %li
+                                %a{ "href" => "#" } About
+
+            %aside.bg-black
+                .container
+            
+            %section.bg-white
+                .container
+                    %h1.align-center.color-wist-4.fw-800 Minimal CSS
+
+            %footer.bg-red
+                .container.w-90.m-auto
+
+        %link{ "rel" => "stylesheet",
+            "href" => "https://use.fontawesome.com/releases/v5.5.0/css/all.css",
+            "integrity" => "sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU",
+            "crossorigin" => "anonymous" }
+
+        %link{ "rel" => "stylesheet",
+            "href" => "css/main.css",
+            "type" => "text/css" }

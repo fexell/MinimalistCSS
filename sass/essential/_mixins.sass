@@ -24,7 +24,7 @@ $breakpoint: ( xs: 48rem, sm: 60rem, md: 75rem, lg: 120rem )
                 @content
 
         @if $size == sm
-            @media ( max-width: map-get( $breakpoint, xs) )
+            @media ( max-width: map-get( $breakpoint, sm ) )
                 @content
 
         @if $size == md
@@ -34,3 +34,8 @@ $breakpoint: ( xs: 48rem, sm: 60rem, md: 75rem, lg: 120rem )
         @if $size == lg
             @media ( max-width: map-get( $breakpoint, lg ) )
                 @content
+
+=clearfix
+    &::after
+        content: ''
+        display: flow-root

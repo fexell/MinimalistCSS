@@ -1,10 +1,5 @@
 .clearfix // Clearfix
-    clear: both
-
-    &::after
-        content: ' '
-        display: flow-root // The new "clearfix"
-        clear: both
+    @include clearfix
 
 .align
     display: block

@@ -6,6 +6,8 @@ main,
 
     display: grid
 
+    // <header||.header>, <aside||.sidebar> and <footer||.footer>
+    // __________________________________________________________
     header,
     .header,
 
@@ -15,6 +17,17 @@ main,
     footer,
     .footer
         padding: map-get( $padding, sm )
+
+    // Align content and items to center in <header||.header> and <footer||.footer>
+    // ____________________________________________________________________________
+    header,
+    .header,
+
+    footer,
+    .footer
+        &> .container
+            justify-content: center
+            align-content: center
 
     header,
     .header
