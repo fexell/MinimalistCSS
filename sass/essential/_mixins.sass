@@ -38,6 +38,7 @@ $breakpoint: ( xs: 48rem, sm: 60rem, md: 75rem, lg: 120rem )
 
 // Clearfix
 =clearfix
+    // Only use flow-root if it's supported. Check /classes/_helpers.sass for legacy clearfix.
     @supports( display: flow-root )
         &::after
             display: flow-root

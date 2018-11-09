@@ -2179,7 +2179,7 @@ h6 {
   }
 }
 
-.clearfix--fallback::after {
+.clearfix--legacy::after {
   visibility: hidden;
   display: block;
   font-size: 0;
