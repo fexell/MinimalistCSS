@@ -6,6 +6,7 @@ nav
         display: table
         list-style-type: none
 
+        // Example: <ul data-hover-color="white">...</ul>
         @each $key, $color in $colors
             &[ data-hover-color='#{ $key }' ] > li > a:hover
                 color: $color
