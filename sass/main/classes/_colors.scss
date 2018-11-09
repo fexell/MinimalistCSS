@@ -18,13 +18,13 @@ $colors: (
 
         @for $i from 1 through 10 {
 
-            &--lighten-#{ $i } {
+            &--lighten-#{ $i }0 {
                 @if $key != white {
                     background-color: lighten( $color, $i + 0% );
                 }
             }
 
-            &--darken-#{ $i } {
+            &--darken-#{ $i }0 {
                 background-color: darken( $color, $i + 0% );
             }
 
@@ -38,13 +38,13 @@ $colors: (
 
         @for $i from 1 through 10 {
 
-            &--lighten-#{ $i } {
+            &--lighten-#{ $i }0 {
                 @if $key != white {
                     color: lighten( $color, $i + 0% );
                 }
             }
 
-            &--darken-#{ $i } {
+            &--darken-#{ $i }0 {
                 color: darken( $color, $i + 0% );
             }
 
