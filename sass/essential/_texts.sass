@@ -7,7 +7,9 @@ del,
 del,
 div,
 em,
-font,
+font[ color ],  // Not supported in HTML5
+font[ face ],   // Not supported in HTML5
+font[ size ],   // Not supported in HTML5
 i,
 ins,
 mark,
@@ -23,3 +25,34 @@ u
     text:
         rendering: optimizeLegibility
     color: inherit
+
+b,
+blockquote,
+center,
+code,
+del,
+del,
+div,
+em,
+font[ color ],  // Not supported in HTML5
+font[ face ],   // Not supported in HTML5
+font[ size ],   // Not supported in HTML5
+i,
+ins,
+mark,
+p,
+pre,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+u
+    & a
+        font:
+            weight: 900
+        
+        &:hover
+            text:
+                decoration: underline
