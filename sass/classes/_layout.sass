@@ -21,7 +21,7 @@
 
 // pw = "padding width"
 @for $i from 1 through 10
-    .paddingwidth--#{ $i }0
+    .padding--width-#{ $i }0
         min-width: $i * 100 + px
         padding:
             left: $i * 10 + %
@@ -29,6 +29,6 @@
 
 // fw = "font-weight"
 @for $i from 1 through 9
-    .fontweight--#{ $i }00
+    .font--weight-#{ $i }00
         font:
             weight: $i * 100
