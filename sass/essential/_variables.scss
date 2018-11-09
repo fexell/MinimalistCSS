@@ -309,13 +309,13 @@ $colors: (
 
 @each $key, $color in $colors {
 
-    .bg-#{ $key } {
+    .bg--#{ $key } {
 
         background-color: $color;
 
     }
 
-    .color-#{ $key } {
+    .color--#{ $key } {
 
         color: $color;
 

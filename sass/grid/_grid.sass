@@ -54,11 +54,11 @@ main,
     display: grid
 
 @for $i from 1 through 12
-    .grid-column-#{ $i }
+    .grid--column-#{ $i }
         grid-column: $i + / + 12
 
-    .grid-row-#{ $i }
+    .grid--row-#{ $i }
         grid-row: $i + / + 12
 
-    .grid-order-#{ $i }
+    .grid--order-#{ $i }
         order: $i

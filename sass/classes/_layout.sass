@@ -7,7 +7,7 @@
         direction: column
 
 .m
-    &-auto
+    &--auto
         margin:
             left: auto
             right: auto
@@ -17,17 +17,17 @@
 
 // Padding classes
 @each $n, $p in $padding
-    .pad-#{ $n }
+    .padding--#{ $n }
         padding: $p
 
 // Width classes
 @for $i from 1 through 10
-    .w-#{ $i }0
+    .width--#{ $i }0
         width: $i * 10 + %
 
 // pw = "padding width"
 @for $i from 1 through 10
-    .pw-#{ $i }0
+    .paddingwidth--#{ $i }0
         min-width: $i * 100 + px
         padding:
             left: $i * 10 + %
@@ -35,6 +35,6 @@
 
 // fw = "font-weight"
 @for $i from 1 through 9
-    .fw-#{ $i }00
+    .fontweight--#{ $i }00
         font:
             weight: $i * 100
