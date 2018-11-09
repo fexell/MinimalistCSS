@@ -6,12 +6,16 @@ nav
         display: table
         list-style-type: none
 
+        @each $key, $color in $colors
+            &[ data-hover-color='#{ $key }' ] > li > a:hover
+                color: $color
+
+
         &> li
             &> a
                 display: inline-block
                 padding: 1.25rem 2rem
                 margin: 0 1rem
-
     &.row
         &> ul
             &> li

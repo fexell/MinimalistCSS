@@ -313,11 +313,39 @@ $colors: (
 
         background-color: $color;
 
+        @for $i from 1 through 10 {
+
+            &--lighten-#{ $i } {
+                @if $key != white {
+                    background-color: lighten( $color, $i + 0% );
+                }
+            }
+
+            &--darken-#{ $i } {
+                background-color: darken( $color, $i + 0% );
+            }
+
+        }
+
     }
 
     .color--#{ $key } {
 
         color: $color;
+
+        @for $i from 1 through 10 {
+
+            &--lighten-#{ $i } {
+                @if $key != white {
+                    color: lighten( $color, $i + 0% );
+                }
+            }
+
+            &--darken-#{ $i } {
+                color: darken( $color, $i + 0% );
+            }
+
+        }
 
     }
 

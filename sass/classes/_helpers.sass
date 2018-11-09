@@ -1,6 +1,21 @@
 .clearfix // Clearfix
     @include clearfix
 
+    &--fallback
+        &::after
+            visibility: hidden
+            display: block
+            font-size: 0
+            content: ' '
+            clear: both
+            height: 0
+
+.margin
+    &--auto
+        margin:
+            left: auto
+            right: auto
+
 .align
     display: block
 

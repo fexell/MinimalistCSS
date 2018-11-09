@@ -1,5 +1,6 @@
 $breakpoint: ( xs: 48rem, sm: 60rem, md: 75rem, lg: 120rem )
 
+// Media query mixin
 =mq( $minOrMax, $size )
     @if $minOrMax == min
         @if $size == xs
@@ -35,7 +36,9 @@ $breakpoint: ( xs: 48rem, sm: 60rem, md: 75rem, lg: 120rem )
             @media ( max-width: map-get( $breakpoint, lg ) )
                 @content
 
+// Clearfix
 =clearfix
-    &::after
-        content: ''
-        display: flow-root
+    @supports( display: flow-root )
+        &::after
+            display: flow-root
+            content: ''
