@@ -1,36 +1,35 @@
 !!!
 %html
-    %head
-        %title MinimalCSS
-        
-    %body
+	%head
+		%title MinimalCSS
+		
+	%body
 
-        %main.grid--layout-2.use-mq
+		%main.grid.grid--layout-2
 
-            %header.bg--red
-                .container.width-90.margin--auto
-                    %nav.row
-                        %ul.color--gray--lighten-50{ "data-hover-color" => "white" }
-                            %li
-                                %a{ "href" => "#" } Home
-                            %li
-                                %a{ "href" => "#" } About
+			%header.bg--red
+				.container.width-90.margin--auto
+					%nav.row
+						%ul.color--gray--lighten-50{ "data-hover-color" => "white" }
+							%li
+								%a{ "href" => "#" } Home
+							%li
+								%a{ "href" => "#" } About
 
-            %aside.bg--black
-                .container
-            
-            %section.bg--white
-                .container
-                    %h1.align--center.color--wist-4.font--weight-800 Minimal CSS
+			%aside.bg--black
+				.container.width-90.margin--auto
+			
+			%section.bg--white
+				.container.width-90.margin--auto
+					%h2.align--center.color--wist-4.font--weight-800 Minimal CSS
 
-            %footer.bg--red
-                .container.width-90.margin--auto
+			%footer.bg--red
 
-        %link{ "rel" => "stylesheet",
-            "href" => "https://use.fontawesome.com/releases/v5.5.0/css/all.css",
-            "integrity" => "sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU",
-            "crossorigin" => "anonymous" }
+		%link{ "rel" => "stylesheet",
+			"href" => "https://use.fontawesome.com/releases/v5.5.0/css/all.css",
+			"integrity" => "sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU",
+			"crossorigin" => "anonymous" }
 
-        %link{ "rel" => "stylesheet",
-            "href" => "css/main/main.css",
-            "type" => "text/css" }
+		%link{ "rel" => "stylesheet",
+			"href" => "css/main/main.css",
+			"type" => "text/css" }

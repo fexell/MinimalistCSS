@@ -1,78 +1,78 @@
 $colors: (
-    white: map-get( $clouds, 0 ),
-    black: map-get( $black, 7 ),
-    gray: map-get( $clouds, 7 ),
-    red: map-get( $aliz, 5 ),
-    purple: map-get( $wist, 5 ),
-    blue: map-get( $pete, 5 ),
-    green: map-get( $neph, 5 ),
-    yellow: map-get( $sun, 5 ),
-    midnight: map-get( $mid, 9 )
+	white: map-get( $clouds, 0 ),
+	black: map-get( $black, 7 ),
+	gray: map-get( $clouds, 7 ),
+	red: map-get( $aliz, 5 ),
+	purple: map-get( $wist, 5 ),
+	blue: map-get( $pete, 5 ),
+	green: map-get( $neph, 5 ),
+	yellow: map-get( $sun, 5 ),
+	midnight: map-get( $mid, 9 )
 );
 
 @each $key, $color in $colors {
 
-    .bg--#{ $key } {
+	.bg--#{ $key } {
 
-        background-color: $color;
+		background-color: $color;
 
-        @for $i from 1 through 10 {
+		@for $i from 1 through 10 {
 
-            &--lighten-#{ $i }0 {
-                @if $key != white {
-                    background-color: lighten( $color, $i + 0% );
-                }
-            }
+			&--lighten-#{ $i }0 {
+				@if $key != white {
+					background-color: lighten( $color, $i + 0% );
+				}
+			}
 
-            &--darken-#{ $i }0 {
-                background-color: darken( $color, $i + 0% );
-            }
+			&--darken-#{ $i }0 {
+				background-color: darken( $color, $i + 0% );
+			}
 
-        }
+		}
 
-    }
+	}
 
-    .color--#{ $key } {
+	.color--#{ $key } {
 
-        color: $color;
+		color: $color;
 
-        @for $i from 1 through 10 {
+		@for $i from 1 through 10 {
 
-            &--lighten-#{ $i }0 {
-                @if $key != white {
-                    color: lighten( $color, $i + 0% );
-                }
-            }
+			&--lighten-#{ $i }0 {
+				@if $key != white {
+					color: lighten( $color, $i + 0% );
+				}
+			}
 
-            &--darken-#{ $i }0 {
-                color: darken( $color, $i + 0% );
-            }
+			&--darken-#{ $i }0 {
+				color: darken( $color, $i + 0% );
+			}
 
-        }
+		}
 
-    }
+	}
 
 }
 
 @supports ( --var: green ) {
 
-    :root {
+	:root {
 
-        --size: #{ $size };
-        --timing: #{ $timing };
-    
-        @each $key, $color in $colors {
-    
-            --#{ $key }: #{ $color };
-    
-        }
-        
-        @each $key, $value in $padding {
-    
-            --padding-#{ $key }: #{ $value }
-    
-        }
-    
-    }
+		--size: #{ $size };
+		--timing: #{ $timing };
+	
+		@each $key, $color in $colors {
+	
+			--#{ $key }: #{ $color };
+	
+		}
+		
+		@each $key, $value in $padding {
+	
+			--padding-#{ $key }: #{ $value }
+	
+		}
+	
+	}
 
 }

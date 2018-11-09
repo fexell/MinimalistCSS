@@ -1,34 +1,41 @@
 .container
-    display: flex
-    width: 100%
-    min-height: 100%
-    
-    flex:
-        direction: column
+	position: relative
+	display: flex
+	width: 100%
+	min-height: 100%
 
+	@extend .container--column
+
+	&--row
+		flex:
+			direction: row
+
+	&--column
+		flex:
+			direction: column
 
 /* For/each loop generated classes */
 
 // Padding classes
 @each $n, $p in $padding
-    .padding--#{ $n }
-        padding: $p
+	.padding--#{ $n }
+		padding: $p
 
 // Width classes
 @for $i from 1 through 10
-    .width-#{ $i }0
-        width: $i * 10 + %
+	.width-#{ $i }0
+		width: $i * 10 + %
 
 // pw = "padding width"
 @for $i from 1 through 10
-    .padding--width-#{ $i }0
-        min-width: $i * 100 + px
-        padding:
-            left: $i * 10 + %
-            right: $i * 10 + %
+	.padding--width-#{ $i }0
+		min-width: $i * 100 + px
+		padding:
+			left: $i * 10 + %
+			right: $i * 10 + %
 
 // fw = "font-weight"
 @for $i from 1 through 9
-    .font--weight-#{ $i }00
-        font:
-            weight: $i * 100
+	.font--weight-#{ $i }00
+		font:
+			weight: $i * 100

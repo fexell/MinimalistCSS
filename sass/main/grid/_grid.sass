@@ -1,64 +1,64 @@
 
-main,
-.main
-    min-height: 100%
-    height: auto
+main.grid,
+.main.grid
+	min-height: 100%
+	height: auto
 
-    display: grid
+	display: grid
 
-    // <header||.header>, <aside||.sidebar> and <footer||.footer>
-    // __________________________________________________________
-    header,
-    .header,
+	// <header||.header>, <aside||.sidebar> and <footer||.footer>
+	// __________________________________________________________
+	header,
+	.header,
 
-    aside,
-    .sidebar,
+	aside,
+	.sidebar,
 
-    footer,
-    .footer
-        padding: map-get( $padding, sm )
+	footer,
+	.footer
+		padding: map-get( $padding, sm )
 
-    // Align content and items to center in <header||.header> and <footer||.footer>
-    // ____________________________________________________________________________
-    header,
-    .header,
+	// Align content and items to center in <header||.header> and <footer||.footer>
+	// ____________________________________________________________________________
+	header,
+	.header,
 
-    footer,
-    .footer
-        &> .container
-            justify-content: center
-            align-content: center
+	footer,
+	.footer
+		&> .container
+			justify-content: center
+			align-content: center
 
-    header,
-    .header
-        grid:
-            area: header
+	header,
+	.header
+		grid:
+			area: header
 
-    aside,
-    .sidebar
-        grid:
-            area: aside
+	aside,
+	.sidebar
+		grid:
+			area: aside
 
-    section,
-    .content
-        padding: map-get( $padding, lg )
-        grid:
-            area: content
+	section,
+	.content
+		padding: map-get( $padding, lg ) map-get( $padding, md )
+		grid:
+			area: content
 
-    footer,
-    .footer
-        grid:
-            area: footer
+	footer,
+	.footer
+		grid:
+			area: footer
 
 .grid
-    display: grid
+	display: grid
 
 @for $i from 1 through 12
-    .grid--column-#{ $i }
-        grid-column: $i + / + 12
+	.grid--column-#{ $i }
+		grid-column: $i + / + 12
 
-    .grid--row-#{ $i }
-        grid-row: $i + / + 12
+	.grid--row-#{ $i }
+		grid-row: $i + / + 12
 
-    .grid--order-#{ $i }
-        order: $i
+	.grid--order-#{ $i }
+		order: $i

@@ -1,0 +1,14 @@
+.padding
+    @for $i from 1 through 100
+        &--sides--#{ $i }
+            padding:
+                left: $i + rem
+                right: $i + rem
+
+        &--ends-#{ $i }
+            padding:
+                top: $i + rem
+                bottom: $i + rem
+
+        &-#{ $i }
+            padding: $i + rem

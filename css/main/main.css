@@ -1,26 +1,26 @@
 /**
-        * CONTENTS
-        *
-        * ESSENTIAL
-        * Variables............SASS/SCSS variables (which are also generated to normal CSS).
-        * Mixins...............SASS/SCSS mixins.
-        * Reset................Resetter CSS for elements.
-        * Normalize............Normalizer to make things look good.
-        * Texts................For text formatting.
-        * Headings.............For headings: <h1>, <h2>, <h3>, <h4>, <h5>, <h6>.
-        *
-        * CLASSES
-        * Layout...............Layout classes, such as ".container", ".m--auto", etc.
-        * Helpers..............Helper classes, such as ".clearfix", ".align--center", etc.
-        * Colors...............Color classes, such as ".bg--white", "color--white", "color--black--lighten-2", etc.
-        *
-        * GRID
-        * Grid.................Grid container element(<main>) and grid--* classes.
-        * Layouts..............Pre-made grid templates.
-        *
-        * NAVIGATION
-        * Navigation...........For menu/navigations.
-    */
+	* CONTENTS
+	*
+	* ESSENTIAL
+	* Variables............SASS/SCSS variables (which are also generated to normal CSS).
+	* Mixins...............SASS/SCSS mixins.
+	* Reset................Resetter CSS for elements.
+	* Normalize............Normalizer to make things look good.
+	* Texts................For text formatting.
+	* Headings.............For headings: <h1>, <h2>, <h3>, <h4>, <h5>, <h6>.
+	*
+	* CLASSES
+	* Layout...............Layout classes, such as ".container", ".m--auto", etc.
+	* Helpers..............Helper classes, such as ".clearfix", ".align--center", etc.
+	* Colors...............Color classes, such as ".bg--white", "color--white", "color--black--lighten-2", etc.
+	*
+	* GRID
+	* Grid.................Grid container element(<main>) and grid--* classes.
+	* Layouts..............Pre-made grid templates.
+	*
+	* NAVIGATION
+	* Navigation...........For menu/navigations.
+ */
 /* _______ */
 /*         */
 /* Default */
@@ -377,6 +377,10 @@ wbr {
     box-sizing: border-box; }
 
 /* Normalize */
+html,
+body {
+  height: 100%; }
+
 html {
   font-family: 'Trebuchet MS', sans-serif;
   font-size: 0.625rem; }
@@ -389,16 +393,11 @@ body {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 100vh;
-  height: auto;
   margin: 0;
   font-size: 1.48rem;
   line-height: 1.48rem;
   white-space: nowrap;
   white-space: initial; }
-  body main {
-    min-height: 100vh;
-    height: auto; }
 
 /* Text elements */
 a,
@@ -1330,26 +1329,33 @@ h6 {
     --yellow: #f1c40f;
     --midnight: #17202a;
     --padding-sm: 1rem
-    
-        ;
+	
+		;
     --padding-md: 2.5rem
-    
-        ;
+	
+		;
     --padding-lg: 5rem
-    
-        ; } }
+	
+		; } }
 
 /* Layout */
 .container {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  min-height: 100%;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column; }
+  min-height: 100%; }
+  .container--row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row; }
+  .container--column, .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
 
 /* For/each loop generated classes */
 .padding--sm {
@@ -1506,57 +1512,57 @@ h6 {
 /* Grid  */
 /* _____ */
 /* Grid */
-main,
-.main {
+main.grid,
+.main.grid {
   min-height: 100%;
   height: auto;
   display: grid; }
-  main header,
-  main .header,
-  main aside,
-  main .sidebar,
-  main footer,
-  main .footer,
-  .main header,
-  .main .header,
-  .main aside,
-  .main .sidebar,
-  .main footer,
-  .main .footer {
+  main.grid header,
+  main.grid .header,
+  main.grid aside,
+  main.grid .sidebar,
+  main.grid footer,
+  main.grid .footer,
+  .main.grid header,
+  .main.grid .header,
+  .main.grid aside,
+  .main.grid .sidebar,
+  .main.grid footer,
+  .main.grid .footer {
     padding: 1rem; }
-  main header > .container,
-  main .header > .container,
-  main footer > .container,
-  main .footer > .container,
-  .main header > .container,
-  .main .header > .container,
-  .main footer > .container,
-  .main .footer > .container {
+  main.grid header > .container,
+  main.grid .header > .container,
+  main.grid footer > .container,
+  main.grid .footer > .container,
+  .main.grid header > .container,
+  .main.grid .header > .container,
+  .main.grid footer > .container,
+  .main.grid .footer > .container {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
     -ms-flex-line-pack: center;
     align-content: center; }
-  main header,
-  main .header,
-  .main header,
-  .main .header {
+  main.grid header,
+  main.grid .header,
+  .main.grid header,
+  .main.grid .header {
     grid-area: header; }
-  main aside,
-  main .sidebar,
-  .main aside,
-  .main .sidebar {
+  main.grid aside,
+  main.grid .sidebar,
+  .main.grid aside,
+  .main.grid .sidebar {
     grid-area: aside; }
-  main section,
-  main .content,
-  .main section,
-  .main .content {
-    padding: 5rem;
+  main.grid section,
+  main.grid .content,
+  .main.grid section,
+  .main.grid .content {
+    padding: 5rem 2.5rem;
     grid-area: content; }
-  main footer,
-  main .footer,
-  .main footer,
-  .main .footer {
+  main.grid footer,
+  main.grid .footer,
+  .main.grid footer,
+  .main.grid .footer {
     grid-area: footer; }
 
 .grid {
@@ -1753,6 +1759,22 @@ nav {
       margin: 0 1rem; }
   nav.row > ul > li {
     float: left; }
+
+.navigation__button, .navigation__button--top, .navigation__button--top--left, .navigation__button--top--right, .navigation__button--bottom, .navigation__button--bottom--left, .navigation__button--bottom--right {
+  position: absolute;
+  padding: 2.5rem; }
+  .navigation__button--top, .navigation__button--top--left, .navigation__button--top--right {
+    top: 0; }
+    .navigation__button--top--left {
+      left: 0; }
+    .navigation__button--top--right {
+      right: 0; }
+  .navigation__button--bottom, .navigation__button--bottom--left, .navigation__button--bottom--right {
+    bottom: 0; }
+    .navigation__button--bottom--left {
+      left: 0; }
+    .navigation__button--bottom--right {
+      right: 0; }
 
 /*___________________*/
 /*                   */

@@ -2,44 +2,44 @@ $breakpoint: ( xs: 48rem, sm: 60rem, md: 75rem, lg: 120rem )
 
 // Media query mixin
 =mq( $minOrMax, $size )
-    @if $minOrMax == min
-        @if $size == xs
-            @media ( min-width: map-get( $breakpoint, xs ) )
-                @content
+	@if $minOrMax == min
+		@if $size == xs
+			@media ( min-width: map-get( $breakpoint, xs ) )
+				@content
 
-        @if $size == sm
-            @media ( min-width: map-get( $breakpoint, sm ) )
-                @content
+		@if $size == sm
+			@media ( min-width: map-get( $breakpoint, sm ) )
+				@content
 
-        @if $size == md
-            @media ( min-width: map-get( $breakpoint, md ) )
-                @content
+		@if $size == md
+			@media ( min-width: map-get( $breakpoint, md ) )
+				@content
 
-        @if $size == lg
-            @media ( min-width: map-get( $breakpoint, lg ) )
-                @content
+		@if $size == lg
+			@media ( min-width: map-get( $breakpoint, lg ) )
+				@content
 
-    @else if $minOrMax == max
-        @if $size == xs
-            @media ( max-width: map-get( $breakpoint, xs ) )
-                @content
+	@else if $minOrMax == max
+		@if $size == xs
+			@media ( max-width: map-get( $breakpoint, xs ) )
+				@content
 
-        @if $size == sm
-            @media ( max-width: map-get( $breakpoint, sm ) )
-                @content
+		@if $size == sm
+			@media ( max-width: map-get( $breakpoint, sm ) )
+				@content
 
-        @if $size == md
-            @media ( max-width: map-get( $breakpoint, md ) )
-                @content
+		@if $size == md
+			@media ( max-width: map-get( $breakpoint, md ) )
+				@content
 
-        @if $size == lg
-            @media ( max-width: map-get( $breakpoint, lg ) )
-                @content
+		@if $size == lg
+			@media ( max-width: map-get( $breakpoint, lg ) )
+				@content
 
 // Clearfix
 =clearfix
-    // Only use flow-root if it's supported. Check /classes/_helpers.sass for legacy clearfix.
-    @supports( display: flow-root )
-        &::after
-            display: flow-root
-            content: ''
+	// Only use flow-root if it's supported. Check /classes/_helpers.sass for legacy clearfix.
+	@supports( display: flow-root )
+		&::after
+			display: flow-root
+			content: ''

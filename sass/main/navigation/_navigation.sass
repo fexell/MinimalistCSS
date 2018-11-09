@@ -1,23 +1,56 @@
-
 nav
-    display: table
+	display: table
 
-    &> ul
-        display: table
-        list-style-type: none
+	&> ul
+		display: table
+		list-style-type: none
 
-        // Example: <ul data-hover-color="white">...</ul>
-        @each $key, $color in $colors
-            &[ data-hover-color='#{ $key }' ] > li > a:hover
-                color: $color
+		// Example: <ul data-hover-color="white">...</ul>
+		@each $key, $color in $colors
+			&[ data-hover-color='#{ $key }' ] > li > a:hover
+				color: $color
 
 
-        &> li
-            &> a
-                display: inline-block
-                padding: 1.25rem 2rem
-                margin: 0 1rem
-    &.row
-        &> ul
-            &> li
-                float: left
+		&> li
+			&> a
+				display: inline-block
+				padding: 1.25rem 2rem
+				margin: 0 1rem
+	&.row
+		&> ul
+			&> li
+				float: left
+
+.navigation
+	&__button
+		position: absolute
+		padding: map-get( $padding, md )
+
+		&--top
+			@extend .navigation__button
+			top: 0
+
+			&--left
+				@extend .navigation__button
+				@extend .navigation__button--top
+				left: 0
+			
+			&--right
+				@extend .navigation__button
+				@extend .navigation__button--top
+				right: 0
+
+		&--bottom
+			@extend .navigation__button
+			bottom: 0
+
+			&--left
+				@extend .navigation__button
+				@extend .navigation__button--bottom
+				left: 0
+
+			&--right
+				@extend .navigation__button
+				@extend .navigation__button--bottom
+				right: 0
+			

@@ -1,3 +1,56 @@
+@import '../main/essential/mixins'
+
+main.grid,
+.main.grid
+	min-height: 100%
+	height: auto
+
+	display: grid
+
+	// Align content and items to center in <header||.header> and <footer||.footer>
+	// ____________________________________________________________________________
+	header,
+	.header,
+
+	footer,
+	.footer
+		&> .container
+			justify-content: center
+			align-content: center
+
+	header,
+	.header
+		grid:
+			area: header
+
+	aside,
+	.sidebar
+		grid:
+			area: aside
+
+	section,
+	.content
+		grid:
+			area: content
+
+	footer,
+	.footer
+		grid:
+			area: footer
+
+.grid
+	display: grid
+
+@for $i from 1 through 12
+	.grid--column-#{ $i }
+		grid-column: $i + / + 12
+
+	.grid--row-#{ $i }
+		grid-row: $i + / + 12
+
+	.grid--order-#{ $i }
+		order: $i
+
 $sizes: ( default: 6rem, xs: 4rem, md: 12rem, lg: 24rem )
 
 .grid--layout
