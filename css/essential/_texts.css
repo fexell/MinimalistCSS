@@ -12,6 +12,7 @@ font[face],
 font[size],
 i,
 ins,
+li,
 mark,
 p,
 pre,
@@ -21,7 +22,8 @@ strong,
 sub,
 sup,
 tt,
-u {
+u,
+ul {
   text-rendering: optimizeLegibility;
   color: inherit; }
 
@@ -38,6 +40,7 @@ font[face] a,
 font[size] a,
 i a,
 ins a,
+li a,
 mark a,
 p a,
 pre a,
@@ -47,8 +50,10 @@ strong a,
 sub a,
 sup a,
 tt a,
-u a {
-  font-weight: 900; }
+u a,
+ul a {
+  font-weight: 900;
+  text-decoration: none; }
   b a:hover,
   blockquote a:hover,
   center a:hover,
@@ -62,6 +67,7 @@ u a {
   font[size] a:hover,
   i a:hover,
   ins a:hover,
+  li a:hover,
   mark a:hover,
   p a:hover,
   pre a:hover,
@@ -71,7 +77,8 @@ u a {
   sub a:hover,
   sup a:hover,
   tt a:hover,
-  u a:hover {
+  u a:hover,
+  ul a:hover {
     text-decoration: underline; }
 
 /*# sourceMappingURL=_texts.css.map */

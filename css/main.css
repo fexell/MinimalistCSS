@@ -6,6 +6,7 @@
         * Mixins...............SASS/SCSS mixins.
         * Reset................Resetter CSS for elements.
         * Normalize............Normalizer to make things look good.
+        * Texts................For text formatting.
         * Headings.............For headings: <h1>, <h2>, <h3>, <h4>, <h5>, <h6>.
         *
         * CLASSES
@@ -466,7 +467,63 @@ button:hover,
   transition: 250ms ease-out;
 }
 
-a {
+/* Texts */
+a,
+b,
+blockquote,
+center,
+code,
+del,
+del,
+div,
+em,
+font[color],
+font[face],
+font[size],
+i,
+ins,
+li,
+mark,
+p,
+pre,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+u,
+ul {
+  text-rendering: optimizeLegibility;
+  color: inherit;
+}
+
+a a,
+b a,
+blockquote a,
+center a,
+code a,
+del a,
+del a,
+div a,
+em a,
+font[color] a,
+font[face] a,
+font[size] a,
+i a,
+ins a,
+li a,
+mark a,
+p a,
+pre a,
+small a,
+strike a,
+strong a,
+sub a,
+sup a,
+tt a,
+u a,
+ul a {
   text-decoration: none;
 }
 
