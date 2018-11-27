@@ -18,7 +18,7 @@ $sizes: ( default: 6rem, xs: 4rem, md: 12rem, lg: 24rem )
 				columns: minmax( auto, map-get( $sizes, lg ) ) 1fr
 				areas: 'header header' 'aside content' 'footer footer'
 
-		&.use-mq
+		&.use--mq
 			@include mq( max, sm )
 				grid:
 					template:
@@ -33,7 +33,7 @@ $sizes: ( default: 6rem, xs: 4rem, md: 12rem, lg: 24rem )
 				columns: minmax( auto, map-get( $sizes, lg ) ) 1fr
 				areas: 'aside content' 'aside footer'
 
-		&.use-mq
+		&.use--mq
 			@include mq( max, sm )
 				grid:
 					template:

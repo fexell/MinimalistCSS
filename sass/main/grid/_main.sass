@@ -29,26 +29,28 @@ main.grid,
 			justify-content: center
 			align-content: center
 
-	header,
-	.header
-		grid:
-			area: header
+	&.grid--areas
 
-	aside,
-	.sidebar
-		grid:
-			area: aside
+		header,
+		.header
+			grid:
+				area: header
 
-	section,
-	.content
-		padding: map-get( $padding, lg ) map-get( $padding, md )
-		grid:
-			area: content
+		aside,
+		.sidebar
+			grid:
+				area: aside
 
-	footer,
-	.footer
-		grid:
-			area: footer
+		section,
+		.content
+			padding: map-get( $padding, lg ) map-get( $padding, md )
+			grid:
+				area: content
+
+		footer,
+		.footer
+			grid:
+				area: footer
 
 .grid
 	display: grid
@@ -62,3 +64,9 @@ main.grid,
 
 	.grid--order-#{ $i }
 		order: $i
+
+	.grid--column--span-#{ $i }
+		grid-column: span $i
+	
+	.grid--row--span-#{ $i }
+		grid-row: span $i
