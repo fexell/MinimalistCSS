@@ -1,30 +1,81 @@
+
 .container
 	position: relative
-	display: flex
 	width: 100%
 	min-height: 100%
 
-	@extend .container--column
+	&--flex
+		display: flex
 
-	&--row
-		flex:
-			direction: row
+		&--row
+			flex:
+				direction: row
 
-	&--column
-		flex:
-			direction: column
+		&--column
+			flex:
+				direction: column
+
+	&--grid
+		@extend .container
+		display: grid
+
+.width
+	// These sizes comes from the breakpoints in ../essential/_mixins.sass
+	&--xs
+		@include mq( min, xs )
+			width: 48rem
+		@include mq( max, xs )
+			width: 100%
+
+	&--sm
+		@extend .width--xs
+		@include mq( min, sm )
+			width: 60rem
+
+
+	&--md
+		@extend .width--xs
+		@extend .width--sm
+		@include mq( min, md )
+			width: 75rem
+
+	&--lg
+		@extend .width--xs
+		@extend .width--sm
+		@extend .width--md
+		@include mq( min, lg )
+			width: 120rem
 
 /* For/each loop generated classes */
-
-// Padding classes
-@each $n, $p in $padding
-	.padding--#{ $n }
-		padding: $p
 
 // Width classes
 @for $i from 1 through 10
 	.width-#{ $i }0
 		width: $i * 10 + %
+
+// Padding and margin classes
+@each $n, $p in $sizes
+	// Padding
+	.padding
+		&--#{ $n }
+			padding: $p
+		
+		&--sides-#{ $n }
+			padding: inherit $p
+
+		&--ends-#{ $n }
+			padding: $p inherit
+
+	// Margin
+	.margin
+		&--#{ $n }
+			margin: $p
+		
+		&--sides-#{ $n }
+			margin: inherit $p
+
+		&--ends-#{ $n }
+			margin: $p inherit
 
 // pw = "padding width"
 @for $i from 1 through 10

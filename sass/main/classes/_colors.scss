@@ -67,7 +67,7 @@ $colors: (
 	
 		}
 		
-		@each $key, $value in $padding {
+		@each $key, $value in $sizes {
 	
 			--padding-#{ $key }: #{ $value }
 	

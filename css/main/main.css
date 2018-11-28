@@ -531,8 +531,8 @@ h1 {
   line-height: 11.84rem; }
   @media (max-width: 48rem) {
     h1 {
-      font-size: 5.92rem;
-      line-height: 5.92rem; } }
+      font-size: 7.89333rem;
+      line-height: 8.14rem; } }
 
 h2 {
   display: block;
@@ -540,8 +540,8 @@ h2 {
   line-height: 5.92rem; }
   @media (max-width: 48rem) {
     h2 {
-      font-size: 2.96rem;
-      line-height: 2.96rem; } }
+      font-size: 3.94667rem;
+      line-height: 4.07rem; } }
 
 h3 {
   display: block;
@@ -549,8 +549,8 @@ h3 {
   line-height: 3.94667rem; }
   @media (max-width: 48rem) {
     h3 {
-      font-size: 1.97333rem;
-      line-height: 1.97333rem; } }
+      font-size: 2.63111rem;
+      line-height: 2.71333rem; } }
 
 h4 {
   display: block;
@@ -558,8 +558,8 @@ h4 {
   line-height: 2.96rem; }
   @media (max-width: 48rem) {
     h4 {
-      font-size: 1.48rem;
-      line-height: 1.48rem; } }
+      font-size: 1.97333rem;
+      line-height: 2.035rem; } }
 
 h5 {
   display: block;
@@ -567,8 +567,8 @@ h5 {
   line-height: 2.368rem; }
   @media (max-width: 48rem) {
     h5 {
-      font-size: 1.184rem;
-      line-height: 1.184rem; } }
+      font-size: 1.57867rem;
+      line-height: 1.628rem; } }
 
 h6 {
   display: block;
@@ -576,8 +576,8 @@ h6 {
   line-height: 1.97333rem; }
   @media (max-width: 48rem) {
     h6 {
-      font-size: 0.98667rem;
-      line-height: 0.98667rem; } }
+      font-size: 1.31556rem;
+      line-height: 1.35667rem; } }
 
 /* _______ */
 /*         */
@@ -1342,34 +1342,48 @@ h6 {
 		; } }
 
 /* Layout */
-.container {
+.container, .container--grid {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   width: 100%;
   min-height: 100%; }
-  .container--row {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row; }
-  .container--column, .container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column; }
+  .container--flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    .container--flex--row {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row; }
+    .container--flex--column {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column; }
+  .container--grid {
+    display: grid; }
+
+@media (min-width: 48rem) {
+  .width--xs, .width--sm, .width--md, .width--lg {
+    width: 48rem; } }
+
+@media (max-width: 48rem) {
+  .width--xs, .width--sm, .width--md, .width--lg {
+    width: 100%; } }
+
+@media (min-width: 60rem) {
+  .width--sm, .width--md, .width--lg {
+    width: 60rem; } }
+
+@media (min-width: 75rem) {
+  .width--md, .width--lg {
+    width: 75rem; } }
+
+@media (min-width: 120rem) {
+  .width--lg {
+    width: 120rem; } }
 
 /* For/each loop generated classes */
-.padding--sm {
-  padding: 1rem; }
-
-.padding--md {
-  padding: 2.5rem; }
-
-.padding--lg {
-  padding: 5rem; }
-
 .width-10 {
   width: 10%; }
 
@@ -1399,6 +1413,60 @@ h6 {
 
 .width-100 {
   width: 100%; }
+
+.padding--sm {
+  padding: 1rem; }
+
+.padding--sides-sm {
+  padding: inherit 1rem; }
+
+.padding--ends-sm {
+  padding: 1rem inherit; }
+
+.margin--sm {
+  margin: 1rem; }
+
+.margin--sides-sm {
+  margin: inherit 1rem; }
+
+.margin--ends-sm {
+  margin: 1rem inherit; }
+
+.padding--md {
+  padding: 2.5rem; }
+
+.padding--sides-md {
+  padding: inherit 2.5rem; }
+
+.padding--ends-md {
+  padding: 2.5rem inherit; }
+
+.margin--md {
+  margin: 2.5rem; }
+
+.margin--sides-md {
+  margin: inherit 2.5rem; }
+
+.margin--ends-md {
+  margin: 2.5rem inherit; }
+
+.padding--lg {
+  padding: 5rem; }
+
+.padding--sides-lg {
+  padding: inherit 5rem; }
+
+.padding--ends-lg {
+  padding: 5rem inherit; }
+
+.margin--lg {
+  margin: 5rem; }
+
+.margin--sides-lg {
+  margin: inherit 5rem; }
+
+.margin--ends-lg {
+  margin: 5rem inherit; }
 
 .padding--width-10 {
   min-width: 100px;
@@ -1515,60 +1583,98 @@ h6 {
 /* Grid  */
 /* _____ */
 /* Main */
-main.grid,
-.main.grid {
+main.grid, main.grid--areas,
+main.__main.grid--areas,
+.__main.grid,
+.__main.grid--areas {
   min-height: 100%;
+  min-height: 100vh;
   height: auto;
   display: grid; }
-  main.grid header,
-  main.grid .header,
+  main.grid header, main.grid--areas header, main.__main.grid--areas header,
+  main.grid .__header,
+  main.grid--areas .__header,
   main.grid aside,
-  main.grid .sidebar,
+  main.grid--areas aside,
+  main.__main.grid--areas aside,
+  main.grid .__sidebar,
+  main.grid--areas .__sidebar,
   main.grid footer,
+  main.grid--areas footer,
+  main.__main.grid--areas footer,
   main.grid .footer,
-  .main.grid header,
-  .main.grid .header,
-  .main.grid aside,
-  .main.grid .sidebar,
-  .main.grid footer,
-  .main.grid .footer {
+  main.grid--areas .footer,
+  .__main.grid header,
+  .__main.grid--areas header,
+  .__main.grid .__header,
+  .__main.grid--areas .__header,
+  .__main.grid aside,
+  .__main.grid--areas aside,
+  .__main.grid .__sidebar,
+  .__main.grid--areas .__sidebar,
+  .__main.grid footer,
+  .__main.grid--areas footer,
+  .__main.grid .footer,
+  .__main.grid--areas .footer {
     padding: 1rem; }
-  main.grid header > .container,
-  main.grid .header > .container,
+  main.grid header > .container, main.grid--areas header > .container, main.grid header > .container--grid, main.grid--areas header > .container--grid,
+  main.grid .__header > .container,
+  main.grid--areas .__header > .container,
+  main.grid .__header > .container--grid,
+  main.grid--areas .__header > .container--grid,
   main.grid footer > .container,
-  main.grid .footer > .container,
-  .main.grid header > .container,
-  .main.grid .header > .container,
-  .main.grid footer > .container,
-  .main.grid .footer > .container {
+  main.grid--areas footer > .container,
+  main.grid footer > .container--grid,
+  main.grid--areas footer > .container--grid,
+  main.grid .__footer > .container,
+  main.grid--areas .__footer > .container,
+  main.grid .__footer > .container--grid,
+  main.grid--areas .__footer > .container--grid,
+  .__main.grid header > .container,
+  .__main.grid--areas header > .container,
+  .__main.grid header > .container--grid,
+  .__main.grid--areas header > .container--grid,
+  .__main.grid .__header > .container,
+  .__main.grid--areas .__header > .container,
+  .__main.grid .__header > .container--grid,
+  .__main.grid--areas .__header > .container--grid,
+  .__main.grid footer > .container,
+  .__main.grid--areas footer > .container,
+  .__main.grid footer > .container--grid,
+  .__main.grid--areas footer > .container--grid,
+  .__main.grid .__footer > .container,
+  .__main.grid--areas .__footer > .container,
+  .__main.grid .__footer > .container--grid,
+  .__main.grid--areas .__footer > .container--grid {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
     -ms-flex-line-pack: center;
     align-content: center; }
-  main.grid.grid--areas header,
-  main.grid.grid--areas .header,
-  .main.grid.grid--areas header,
-  .main.grid.grid--areas .header {
+  main.grid--areas header,
+  main.grid--areas .__header,
+  .__main.grid--areas header,
+  .__main.grid--areas .__header {
     grid-area: header; }
-  main.grid.grid--areas aside,
-  main.grid.grid--areas .sidebar,
-  .main.grid.grid--areas aside,
-  .main.grid.grid--areas .sidebar {
+  main.grid--areas aside,
+  main.grid--areas .__sidebar,
+  .__main.grid--areas aside,
+  .__main.grid--areas .__sidebar {
     grid-area: aside; }
-  main.grid.grid--areas section,
-  main.grid.grid--areas .content,
-  .main.grid.grid--areas section,
-  .main.grid.grid--areas .content {
+  main.grid--areas section,
+  main.grid--areas .__content,
+  .__main.grid--areas section,
+  .__main.grid--areas .__content {
     padding: 5rem 2.5rem;
     grid-area: content; }
-  main.grid.grid--areas footer,
-  main.grid.grid--areas .footer,
-  .main.grid.grid--areas footer,
-  .main.grid.grid--areas .footer {
+  main.grid--areas footer,
+  main.grid--areas .__footer,
+  .__main.grid--areas footer,
+  .__main.grid--areas .__footer {
     grid-area: footer; }
 
-.grid {
+.grid, main.grid--areas,
+.__main.grid--areas {
   display: grid; }
 
 .grid--column-1 {
@@ -1776,27 +1882,27 @@ main.grid,
   grid-row: span 12; }
 
 /* Layouts */
-.grid--layout-1 {
+.grid__layout-1 {
   grid-template-rows: minmax(auto, 6rem) 1fr minmax(auto, 6rem);
   grid-template-columns: 1fr;
   grid-template-areas: 'header header' 'content content' 'footer footer'; }
 
-.grid--layout-2 {
+.grid__layout-2, .grid__layout-2--responsive {
   grid-template-rows: minmax(auto, 6rem) 1fr minmax(auto, 6rem);
   grid-template-columns: minmax(auto, 24rem) 1fr;
   grid-template-areas: 'header header' 'aside content' 'footer footer'; }
   @media (max-width: 60rem) {
-    .grid--layout-2.use--mq {
+    .grid__layout-2--responsive {
       grid-template-rows: minmax(auto, 6rem) minmax(auto, 12rem) 1fr minmax(auto, 6rem);
       grid-template-columns: 1fr;
       grid-template-areas: 'header header' 'aside aside' 'content content' 'footer footer'; } }
 
-.grid--layout-3 {
+.grid__layout-3, .grid__layout-3--responsive {
   grid-template-rows: 1fr minmax(auto, 6rem);
   grid-template-columns: minmax(auto, 24rem) 1fr;
   grid-template-areas: 'aside content' 'aside footer'; }
   @media (max-width: 60rem) {
-    .grid--layout-3.use--mq {
+    .grid__layout-3--responsive {
       grid-template-rows: minmax(auto, 24rem) 1fr minmax(auto, 6rem);
       grid-template-columns: 1fr;
       grid-template-areas: 'aside aside' 'content content' 'footer footer'; } }
@@ -1894,7 +2000,7 @@ nav {
 
 .navigation__button, .navigation__button--top, .navigation__button--top--left, .navigation__button--top--right, .navigation__button--bottom, .navigation__button--bottom--left, .navigation__button--bottom--right {
   position: absolute;
-  padding: 2.5rem; }
+  padding: 12rem; }
   .navigation__button--top, .navigation__button--top--left, .navigation__button--top--right {
     top: 0; }
     .navigation__button--top--left {

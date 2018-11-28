@@ -1,7 +1,8 @@
 
 main.grid,
-.main.grid
+.__main.grid
 	min-height: 100%
+	min-height: 100vh
 	height: auto
 
 	display: grid
@@ -9,46 +10,48 @@ main.grid,
 	// <header||.header>, <aside||.sidebar> and <footer||.footer>
 	// __________________________________________________________
 	header,
-	.header,
+	.__header,
 
 	aside,
-	.sidebar,
+	.__sidebar,
 
 	footer,
 	.footer
-		padding: map-get( $padding, sm )
+		padding: map-get( $sizes, sm )
 
 	// Align content and items to center in <header||.header> and <footer||.footer>
 	// ____________________________________________________________________________
 	header,
-	.header,
+	.__header,
 
 	footer,
-	.footer
+	.__footer
 		&> .container
 			justify-content: center
 			align-content: center
 
-	&.grid--areas
+	&--areas
+
+		@extend .grid
 
 		header,
-		.header
+		.__header
 			grid:
 				area: header
 
 		aside,
-		.sidebar
+		.__sidebar
 			grid:
 				area: aside
 
 		section,
-		.content
-			padding: map-get( $padding, lg ) map-get( $padding, md )
+		.__content
+			padding: map-get( $sizes, lg ) map-get( $sizes, md )
 			grid:
 				area: content
 
 		footer,
-		.footer
+		.__footer
 			grid:
 				area: footer
 

@@ -1,6 +1,6 @@
 $sizes: ( default: 6rem, xs: 4rem, md: 12rem, lg: 24rem )
 
-.grid--layout
+.grid__layout
 	&-1
 		grid:
 			template:
@@ -18,7 +18,8 @@ $sizes: ( default: 6rem, xs: 4rem, md: 12rem, lg: 24rem )
 				columns: minmax( auto, map-get( $sizes, lg ) ) 1fr
 				areas: 'header header' 'aside content' 'footer footer'
 
-		&.use--mq
+		&--responsive
+			@extend .grid__layout-2
 			@include mq( max, sm )
 				grid:
 					template:
@@ -33,7 +34,8 @@ $sizes: ( default: 6rem, xs: 4rem, md: 12rem, lg: 24rem )
 				columns: minmax( auto, map-get( $sizes, lg ) ) 1fr
 				areas: 'aside content' 'aside footer'
 
-		&.use--mq
+		&--responsive
+			@extend .grid__layout-3
 			@include mq( max, sm )
 				grid:
 					template:

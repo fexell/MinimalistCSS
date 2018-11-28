@@ -1,39 +1,39 @@
-$breakpoint: ( xs: 48rem, sm: 60rem, md: 75rem, lg: 120rem )
+$breakpoints: ( xs: 48rem, sm: 60rem, md: 75rem, lg: 120rem )
 
 // Media query mixin
 =mq( $minOrMax, $size )
 	@if $minOrMax == min
 		@if $size == xs
-			@media ( min-width: map-get( $breakpoint, xs ) )
+			@media ( min-width: map-get( $breakpoints, xs ) )
 				@content
 
 		@if $size == sm
-			@media ( min-width: map-get( $breakpoint, sm ) )
+			@media ( min-width: map-get( $breakpoints, sm ) )
 				@content
 
 		@if $size == md
-			@media ( min-width: map-get( $breakpoint, md ) )
+			@media ( min-width: map-get( $breakpoints, md ) )
 				@content
 
 		@if $size == lg
-			@media ( min-width: map-get( $breakpoint, lg ) )
+			@media ( min-width: map-get( $breakpoints, lg ) )
 				@content
 
 	@else if $minOrMax == max
 		@if $size == xs
-			@media ( max-width: map-get( $breakpoint, xs ) )
+			@media ( max-width: map-get( $breakpoints, xs ) )
 				@content
 
 		@if $size == sm
-			@media ( max-width: map-get( $breakpoint, sm ) )
+			@media ( max-width: map-get( $breakpoints, sm ) )
 				@content
 
 		@if $size == md
-			@media ( max-width: map-get( $breakpoint, md ) )
+			@media ( max-width: map-get( $breakpoints, md ) )
 				@content
 
 		@if $size == lg
-			@media ( max-width: map-get( $breakpoint, lg ) )
+			@media ( max-width: map-get( $breakpoints, lg ) )
 				@content
 
 // Clearfix
