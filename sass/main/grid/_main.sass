@@ -1,75 +1,71 @@
 
-main.grid,
-.__main.grid
-	min-height: 100%
-	min-height: 100vh
-	height: auto
-
-	display: grid
-
-	// <header||.header>, <aside||.sidebar> and <footer||.footer>
-	// __________________________________________________________
-	header,
-	.__header,
-
-	aside,
-	.__sidebar,
-
-	footer,
-	.footer
-		padding: map-get( $sizes, sm )
-
-	// Align content and items to center in <header||.header> and <footer||.footer>
-	// ____________________________________________________________________________
-	header,
-	.__header,
-
-	footer,
-	.__footer
-		&> .container
-			justify-content: center
-			align-content: center
-
-	&--areas
-
-		@extend .grid
-
-		header,
-		.__header
-			grid:
-				area: header
-
-		aside,
-		.__sidebar
-			grid:
-				area: aside
-
-		section,
-		.__content
-			padding: map-get( $sizes, lg ) map-get( $sizes, md )
-			grid:
-				area: content
-
-		footer,
-		.__footer
-			grid:
-				area: footer
-
 .grid
 	display: grid
 
+body
+	&.grid,
+	&> main.grid,
+	&> .__main.grid
+		@extend .grid
+		height: 100%
+
+		// <header||.header>, <aside||.sidebar> and <footer||.footer>
+		// __________________________________________________________
+		header,
+		.__header,
+		aside,
+		.__sidebar,
+		footer,
+		.__footer
+			padding: map-get( $sizes, sm )
+
+		// Align content and items to center in <header||.header> and <footer||.footer>
+		// ____________________________________________________________________________
+		header,
+		.__header,
+		footer,
+		.__footer
+			&> .container
+				justify-content: center
+				align-content: center
+
+		&--areas
+
+			@extend .grid
+
+			header,
+			.__header
+				grid:
+					area: header
+
+			aside,
+			.__sidebar
+				grid:
+					area: aside
+
+			section,
+			.__content
+				padding: map-get( $sizes, lg ) map-get( $sizes, md )
+				grid:
+					area: content
+
+			footer,
+			.__footer
+				grid:
+					area: footer
+
 @for $i from 1 through 12
-	.grid--column-#{ $i }
+	.grid__column-#{ $i }
 		grid-column: $i + / + 12
 
-	.grid--row-#{ $i }
+	.grid__row-#{ $i }
 		grid-row: $i + / + 12
 
 	.grid--order-#{ $i }
 		order: $i
 
-	.grid--column--span-#{ $i }
+	.grid__column--span-#{ $i }
 		grid-column: span $i
 	
-	.grid--row--span-#{ $i }
+	.grid__row--span-#{ $i }
 		grid-row: span $i

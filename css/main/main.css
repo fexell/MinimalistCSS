@@ -1342,30 +1342,17 @@ h6 {
 		; } }
 
 /* Layout */
-.container, .container--grid {
+.container, .container.flex, .container.grid,
+body > .container.__main.grid, body.container.grid--areas,
+body > main.container.grid--areas,
+body > .container.__main.grid--areas {
   position: relative;
   width: 100%;
-  min-height: 100%; }
-  .container--flex {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex; }
-    .container--flex--row {
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-      flex-direction: row; }
-    .container--flex--column {
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-      flex-direction: column; }
-  .container--grid {
-    display: grid; }
+  height: 100%; }
 
 @media (min-width: 48rem) {
   .width--xs, .width--sm, .width--md, .width--lg {
-    width: 48rem; } }
+    width: 70rem; } }
 
 @media (max-width: 48rem) {
   .width--xs, .width--sm, .width--md, .width--lg {
@@ -1373,15 +1360,15 @@ h6 {
 
 @media (min-width: 60rem) {
   .width--sm, .width--md, .width--lg {
-    width: 60rem; } }
+    width: 92rem; } }
 
 @media (min-width: 75rem) {
   .width--md, .width--lg {
-    width: 75rem; } }
+    width: 120rem; } }
 
 @media (min-width: 120rem) {
   .width--lg {
-    width: 120rem; } }
+    width: 160rem; } }
 
 /* For/each loop generated classes */
 .width-10 {
@@ -1418,55 +1405,76 @@ h6 {
   padding: 1rem; }
 
 .padding--sides-sm {
-  padding: inherit 1rem; }
+  padding-left: 1rem;
+  padding-right: 1rem; }
 
 .padding--ends-sm {
-  padding: 1rem inherit; }
+  padding-top: 1rem;
+  padding-bottom: 1rem; }
 
-.margin--sm {
+.margin--sm,
+.offset--sm {
   margin: 1rem; }
 
-.margin--sides-sm {
-  margin: inherit 1rem; }
+.margin--sides--sm,
+.offset--sides--sm {
+  margin-left: 1rem;
+  margin-right: 1rem; }
 
-.margin--ends-sm {
-  margin: 1rem inherit; }
+.margin--ends--sm,
+.offset--ends--sm {
+  margin-top: 1rem;
+  margin-bottom: 1rem; }
 
 .padding--md {
   padding: 2.5rem; }
 
 .padding--sides-md {
-  padding: inherit 2.5rem; }
+  padding-left: 2.5rem;
+  padding-right: 2.5rem; }
 
 .padding--ends-md {
-  padding: 2.5rem inherit; }
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem; }
 
-.margin--md {
+.margin--md,
+.offset--md {
   margin: 2.5rem; }
 
-.margin--sides-md {
-  margin: inherit 2.5rem; }
+.margin--sides--md,
+.offset--sides--md {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem; }
 
-.margin--ends-md {
-  margin: 2.5rem inherit; }
+.margin--ends--md,
+.offset--ends--md {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem; }
 
 .padding--lg {
   padding: 5rem; }
 
 .padding--sides-lg {
-  padding: inherit 5rem; }
+  padding-left: 5rem;
+  padding-right: 5rem; }
 
 .padding--ends-lg {
-  padding: 5rem inherit; }
+  padding-top: 5rem;
+  padding-bottom: 5rem; }
 
-.margin--lg {
+.margin--lg,
+.offset--lg {
   margin: 5rem; }
 
-.margin--sides-lg {
-  margin: inherit 5rem; }
+.margin--sides--lg,
+.offset--sides--lg {
+  margin-left: 5rem;
+  margin-right: 5rem; }
 
-.margin--ends-lg {
-  margin: 5rem inherit; }
+.margin--ends--lg,
+.offset--ends--lg {
+  margin-top: 5rem;
+  margin-bottom: 5rem; }
 
 .padding--width-10 {
   min-width: 100px;
@@ -1583,104 +1591,131 @@ h6 {
 /* Grid  */
 /* _____ */
 /* Main */
-main.grid, main.grid--areas,
-main.__main.grid--areas,
-.__main.grid,
-.__main.grid--areas {
-  min-height: 100%;
-  min-height: 100vh;
-  height: auto;
+.grid, body.grid,
+body > main.grid,
+body > .__main.grid, body.grid--areas,
+body > main.grid--areas,
+body > .__main.grid--areas {
   display: grid; }
-  main.grid header, main.grid--areas header, main.__main.grid--areas header,
-  main.grid .__header,
-  main.grid--areas .__header,
-  main.grid aside,
-  main.grid--areas aside,
-  main.__main.grid--areas aside,
-  main.grid .__sidebar,
-  main.grid--areas .__sidebar,
-  main.grid footer,
-  main.grid--areas footer,
-  main.__main.grid--areas footer,
-  main.grid .footer,
-  main.grid--areas .footer,
-  .__main.grid header,
-  .__main.grid--areas header,
-  .__main.grid .__header,
-  .__main.grid--areas .__header,
-  .__main.grid aside,
-  .__main.grid--areas aside,
-  .__main.grid .__sidebar,
-  .__main.grid--areas .__sidebar,
-  .__main.grid footer,
-  .__main.grid--areas footer,
-  .__main.grid .footer,
-  .__main.grid--areas .footer {
+
+body.grid,
+body > body.__main.grid, body.grid--areas,
+body > body.__main.grid--areas,
+body > main.grid,
+body > main.__main.grid,
+body > main.grid--areas,
+body > main.__main.grid--areas,
+body > .__main.grid,
+body > .__main.grid--areas {
+  height: 100%; }
+  body.grid header, body > body.__main.grid header, body.grid--areas header, body > body.__main.grid--areas header,
+  body.grid .__header,
+  body.grid--areas .__header,
+  body.grid aside,
+  body > body.__main.grid aside,
+  body.grid--areas aside,
+  body > body.__main.grid--areas aside,
+  body.grid .__sidebar,
+  body.grid--areas .__sidebar,
+  body.grid footer,
+  body > body.__main.grid footer,
+  body.grid--areas footer,
+  body > body.__main.grid--areas footer,
+  body.grid .__footer,
+  body.grid--areas .__footer,
+  body > main.grid header,
+  body > main.__main.grid header,
+  body > main.grid--areas header,
+  body > main.__main.grid--areas header,
+  body > main.grid .__header,
+  body > main.grid--areas .__header,
+  body > main.grid aside,
+  body > main.__main.grid aside,
+  body > main.grid--areas aside,
+  body > main.__main.grid--areas aside,
+  body > main.grid .__sidebar,
+  body > main.grid--areas .__sidebar,
+  body > main.grid footer,
+  body > main.__main.grid footer,
+  body > main.grid--areas footer,
+  body > main.__main.grid--areas footer,
+  body > main.grid .__footer,
+  body > main.grid--areas .__footer,
+  body > .__main.grid header,
+  body > .__main.grid--areas header,
+  body > .__main.grid .__header,
+  body > .__main.grid--areas .__header,
+  body > .__main.grid aside,
+  body > .__main.grid--areas aside,
+  body > .__main.grid .__sidebar,
+  body > .__main.grid--areas .__sidebar,
+  body > .__main.grid footer,
+  body > .__main.grid--areas footer,
+  body > .__main.grid .__footer,
+  body > .__main.grid--areas .__footer {
     padding: 1rem; }
-  main.grid header > .container, main.grid--areas header > .container, main.grid header > .container--grid, main.grid--areas header > .container--grid,
-  main.grid .__header > .container,
-  main.grid--areas .__header > .container,
-  main.grid .__header > .container--grid,
-  main.grid--areas .__header > .container--grid,
-  main.grid footer > .container,
-  main.grid--areas footer > .container,
-  main.grid footer > .container--grid,
-  main.grid--areas footer > .container--grid,
-  main.grid .__footer > .container,
-  main.grid--areas .__footer > .container,
-  main.grid .__footer > .container--grid,
-  main.grid--areas .__footer > .container--grid,
-  .__main.grid header > .container,
-  .__main.grid--areas header > .container,
-  .__main.grid header > .container--grid,
-  .__main.grid--areas header > .container--grid,
-  .__main.grid .__header > .container,
-  .__main.grid--areas .__header > .container,
-  .__main.grid .__header > .container--grid,
-  .__main.grid--areas .__header > .container--grid,
-  .__main.grid footer > .container,
-  .__main.grid--areas footer > .container,
-  .__main.grid footer > .container--grid,
-  .__main.grid--areas footer > .container--grid,
-  .__main.grid .__footer > .container,
-  .__main.grid--areas .__footer > .container,
-  .__main.grid .__footer > .container--grid,
-  .__main.grid--areas .__footer > .container--grid {
+  body.grid header > .container, body.grid--areas header > .container,
+  body.grid .__header > .container,
+  body.grid--areas .__header > .container,
+  body.grid footer > .container,
+  body.grid--areas footer > .container,
+  body.grid .__footer > .container,
+  body.grid--areas .__footer > .container,
+  body > main.grid header > .container,
+  body > main.grid--areas header > .container,
+  body > main.grid .__header > .container,
+  body > main.grid--areas .__header > .container,
+  body > main.grid footer > .container,
+  body > main.grid--areas footer > .container,
+  body > main.grid .__footer > .container,
+  body > main.grid--areas .__footer > .container,
+  body > .__main.grid header > .container,
+  body > .__main.grid--areas header > .container,
+  body > .__main.grid .__header > .container,
+  body > .__main.grid--areas .__header > .container,
+  body > .__main.grid footer > .container,
+  body > .__main.grid--areas footer > .container,
+  body > .__main.grid .__footer > .container,
+  body > .__main.grid--areas .__footer > .container {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
     -ms-flex-line-pack: center;
     align-content: center; }
-  main.grid--areas header,
-  main.grid--areas .__header,
-  .__main.grid--areas header,
-  .__main.grid--areas .__header {
+  body.grid--areas header,
+  body.grid--areas .__header,
+  body > main.grid--areas header,
+  body > main.grid--areas .__header,
+  body > .__main.grid--areas header,
+  body > .__main.grid--areas .__header {
     grid-area: header; }
-  main.grid--areas aside,
-  main.grid--areas .__sidebar,
-  .__main.grid--areas aside,
-  .__main.grid--areas .__sidebar {
+  body.grid--areas aside,
+  body.grid--areas .__sidebar,
+  body > main.grid--areas aside,
+  body > main.grid--areas .__sidebar,
+  body > .__main.grid--areas aside,
+  body > .__main.grid--areas .__sidebar {
     grid-area: aside; }
-  main.grid--areas section,
-  main.grid--areas .__content,
-  .__main.grid--areas section,
-  .__main.grid--areas .__content {
+  body.grid--areas section,
+  body.grid--areas .__content,
+  body > main.grid--areas section,
+  body > main.grid--areas .__content,
+  body > .__main.grid--areas section,
+  body > .__main.grid--areas .__content {
     padding: 5rem 2.5rem;
     grid-area: content; }
-  main.grid--areas footer,
-  main.grid--areas .__footer,
-  .__main.grid--areas footer,
-  .__main.grid--areas .__footer {
+  body.grid--areas footer,
+  body.grid--areas .__footer,
+  body > main.grid--areas footer,
+  body > main.grid--areas .__footer,
+  body > .__main.grid--areas footer,
+  body > .__main.grid--areas .__footer {
     grid-area: footer; }
 
-.grid, main.grid--areas,
-.__main.grid--areas {
-  display: grid; }
-
-.grid--column-1 {
+.grid__column-1 {
   grid-column: 1/12; }
 
-.grid--row-1 {
+.grid__row-1 {
   grid-row: 1/12; }
 
 .grid--order-1 {
@@ -1688,16 +1723,16 @@ main.__main.grid--areas,
   -ms-flex-order: 1;
   order: 1; }
 
-.grid--column--span-1 {
+.grid__column--span-1 {
   grid-column: span 1; }
 
-.grid--row--span-1 {
+.grid__row--span-1 {
   grid-row: span 1; }
 
-.grid--column-2 {
+.grid__column-2 {
   grid-column: 2/12; }
 
-.grid--row-2 {
+.grid__row-2 {
   grid-row: 2/12; }
 
 .grid--order-2 {
@@ -1705,16 +1740,16 @@ main.__main.grid--areas,
   -ms-flex-order: 2;
   order: 2; }
 
-.grid--column--span-2 {
+.grid__column--span-2 {
   grid-column: span 2; }
 
-.grid--row--span-2 {
+.grid__row--span-2 {
   grid-row: span 2; }
 
-.grid--column-3 {
+.grid__column-3 {
   grid-column: 3/12; }
 
-.grid--row-3 {
+.grid__row-3 {
   grid-row: 3/12; }
 
 .grid--order-3 {
@@ -1722,16 +1757,16 @@ main.__main.grid--areas,
   -ms-flex-order: 3;
   order: 3; }
 
-.grid--column--span-3 {
+.grid__column--span-3 {
   grid-column: span 3; }
 
-.grid--row--span-3 {
+.grid__row--span-3 {
   grid-row: span 3; }
 
-.grid--column-4 {
+.grid__column-4 {
   grid-column: 4/12; }
 
-.grid--row-4 {
+.grid__row-4 {
   grid-row: 4/12; }
 
 .grid--order-4 {
@@ -1739,16 +1774,16 @@ main.__main.grid--areas,
   -ms-flex-order: 4;
   order: 4; }
 
-.grid--column--span-4 {
+.grid__column--span-4 {
   grid-column: span 4; }
 
-.grid--row--span-4 {
+.grid__row--span-4 {
   grid-row: span 4; }
 
-.grid--column-5 {
+.grid__column-5 {
   grid-column: 5/12; }
 
-.grid--row-5 {
+.grid__row-5 {
   grid-row: 5/12; }
 
 .grid--order-5 {
@@ -1756,16 +1791,16 @@ main.__main.grid--areas,
   -ms-flex-order: 5;
   order: 5; }
 
-.grid--column--span-5 {
+.grid__column--span-5 {
   grid-column: span 5; }
 
-.grid--row--span-5 {
+.grid__row--span-5 {
   grid-row: span 5; }
 
-.grid--column-6 {
+.grid__column-6 {
   grid-column: 6/12; }
 
-.grid--row-6 {
+.grid__row-6 {
   grid-row: 6/12; }
 
 .grid--order-6 {
@@ -1773,16 +1808,16 @@ main.__main.grid--areas,
   -ms-flex-order: 6;
   order: 6; }
 
-.grid--column--span-6 {
+.grid__column--span-6 {
   grid-column: span 6; }
 
-.grid--row--span-6 {
+.grid__row--span-6 {
   grid-row: span 6; }
 
-.grid--column-7 {
+.grid__column-7 {
   grid-column: 7/12; }
 
-.grid--row-7 {
+.grid__row-7 {
   grid-row: 7/12; }
 
 .grid--order-7 {
@@ -1790,16 +1825,16 @@ main.__main.grid--areas,
   -ms-flex-order: 7;
   order: 7; }
 
-.grid--column--span-7 {
+.grid__column--span-7 {
   grid-column: span 7; }
 
-.grid--row--span-7 {
+.grid__row--span-7 {
   grid-row: span 7; }
 
-.grid--column-8 {
+.grid__column-8 {
   grid-column: 8/12; }
 
-.grid--row-8 {
+.grid__row-8 {
   grid-row: 8/12; }
 
 .grid--order-8 {
@@ -1807,16 +1842,16 @@ main.__main.grid--areas,
   -ms-flex-order: 8;
   order: 8; }
 
-.grid--column--span-8 {
+.grid__column--span-8 {
   grid-column: span 8; }
 
-.grid--row--span-8 {
+.grid__row--span-8 {
   grid-row: span 8; }
 
-.grid--column-9 {
+.grid__column-9 {
   grid-column: 9/12; }
 
-.grid--row-9 {
+.grid__row-9 {
   grid-row: 9/12; }
 
 .grid--order-9 {
@@ -1824,16 +1859,16 @@ main.__main.grid--areas,
   -ms-flex-order: 9;
   order: 9; }
 
-.grid--column--span-9 {
+.grid__column--span-9 {
   grid-column: span 9; }
 
-.grid--row--span-9 {
+.grid__row--span-9 {
   grid-row: span 9; }
 
-.grid--column-10 {
+.grid__column-10 {
   grid-column: 10/12; }
 
-.grid--row-10 {
+.grid__row-10 {
   grid-row: 10/12; }
 
 .grid--order-10 {
@@ -1841,16 +1876,16 @@ main.__main.grid--areas,
   -ms-flex-order: 10;
   order: 10; }
 
-.grid--column--span-10 {
+.grid__column--span-10 {
   grid-column: span 10; }
 
-.grid--row--span-10 {
+.grid__row--span-10 {
   grid-row: span 10; }
 
-.grid--column-11 {
+.grid__column-11 {
   grid-column: 11/12; }
 
-.grid--row-11 {
+.grid__row-11 {
   grid-row: 11/12; }
 
 .grid--order-11 {
@@ -1858,16 +1893,16 @@ main.__main.grid--areas,
   -ms-flex-order: 11;
   order: 11; }
 
-.grid--column--span-11 {
+.grid__column--span-11 {
   grid-column: span 11; }
 
-.grid--row--span-11 {
+.grid__row--span-11 {
   grid-row: span 11; }
 
-.grid--column-12 {
+.grid__column-12 {
   grid-column: 12/12; }
 
-.grid--row-12 {
+.grid__row-12 {
   grid-row: 12/12; }
 
 .grid--order-12 {
@@ -1875,10 +1910,10 @@ main.__main.grid--areas,
   -ms-flex-order: 12;
   order: 12; }
 
-.grid--column--span-12 {
+.grid__column--span-12 {
   grid-column: span 12; }
 
-.grid--row--span-12 {
+.grid__row--span-12 {
   grid-row: span 12; }
 
 /* Layouts */
@@ -1912,56 +1947,10 @@ main.__main.grid--areas,
 /* Flex  */
 /* _____ */
 /* Main */
-main.flex,
-.main.flex {
+.flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
-  main.flex .flex--row-1,
-  .main.flex .flex--row-1 {
-    -webkit-box-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-      flex-direction: row; }
-  main.flex .flex--row-2,
-  .main.flex .flex--row-2 {
-    -webkit-box-flex: 2;
-    -ms-flex: 2;
-    flex: 2;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-      flex-direction: row; }
-  main.flex .flex--row-3,
-  .main.flex .flex--row-3 {
-    -webkit-box-flex: 3;
-    -ms-flex: 3;
-    flex: 3;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-      flex-direction: row; }
-  main.flex .flex--row-4,
-  .main.flex .flex--row-4 {
-    -webkit-box-flex: 4;
-    -ms-flex: 4;
-    flex: 4;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-      flex-direction: row; }
-  main.flex .flex--row-5,
-  .main.flex .flex--row-5 {
-    -webkit-box-flex: 5;
-    -ms-flex: 5;
-    flex: 5;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-      flex-direction: row; }
 
 /* __________ */
 /*            */
